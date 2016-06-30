@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="en" class="no-js">
 <head>
 <meta charset="UTF-8" />
@@ -47,7 +55,8 @@
 						</div>
 						<div class="header_detail_container">
 							<div class="header_detail_box">
-								<a href="http://music.163.com/#/playlist?id=40462805" target="_blank">
+								<a href="http://music.163.com/#/playlist?id=40462805"
+									target="_blank">
 									<div class="header_detail_img1">
 										<div class="header_detail_imgCover"></div>
 									</div>
@@ -219,13 +228,13 @@
 						</div>
 						<div class="header_detail_container">
 							<div class="header_detail_box">
-							<a href="http://127.0.0.1:8080/self/upload.jsp" target="_blank">
-								<div class="header_detail_img">
-									<div class="header_detail_imgCover"></div>
-								</div>
-								<p class="header_detail_title">
-									<img src="header/image/nav_menu_arrow.png" alt="">上传文件
-								</p>
+								<a href="<%=basePath%>upload.jsp" target="_blank">
+									<div class="header_detail_img">
+										<div class="header_detail_imgCover"></div>
+									</div>
+									<p class="header_detail_title">
+										<img src="header/image/nav_menu_arrow.png" alt="">上传文件
+									</p>
 								</a>
 							</div>
 							<div class="clear"></div>
@@ -244,121 +253,103 @@
 	</div>
 
 	<section class="section section--shots section--right">
-		<h2 class="section__heading">
-			The meaning <em>OF</em> itself
-		</h2>
-		<p class="section__subtitle">你就是你，世界上唯一的一个，不要因为羡慕或者别的情绪，而让自己成为他人的复制品，这没有意义，生命之所以珍贵，正是因为它的不可复制。</p>
-		<div class="isolayer isolayer--deco4">
-			<ul class="grid">
-				<li class="grid__item"><a class="grid__link" href="#"><img
-						class="grid__img layer" src="IsometricGrids/img/Dribbble/1.png"
-						alt="01" /> </a></li>
-				<li class="grid__item"><a class="grid__link" href="#"><div
-							class="layer"></div>
-						<div class="layer"></div>
-						<div class="layer"></div>
-						<img class="grid__img layer"
-						src="IsometricGrids/img/Dribbble/2.png" alt="02" /></a></li>
-				<li class="grid__item"><a class="grid__link" href="#"><div
-							class="layer"></div>
-						<div class="layer"></div>
-						<div class="layer"></div>
-						<img class="grid__img layer"
-						src="IsometricGrids/img/Dribbble/3.png" alt="03" /></a></li>
-				<li class="grid__item"><a class="grid__link" href="#"><div
-							class="layer"></div>
-						<div class="layer"></div>
-						<div class="layer"></div>
-						<img class="grid__img layer"
-						src="IsometricGrids/img/Dribbble/4.png" alt="04" /></a></li>
-				<li class="grid__item"><a class="grid__link" href="#"><div
-							class="layer"></div>
-						<div class="layer"></div>
-						<div class="layer"></div>
-						<img class="grid__img layer"
-						src="IsometricGrids/img/Dribbble/5.png" alt="05" /></a></li>
-				<li class="grid__item"><a class="grid__link" href="#"><div
-							class="layer"></div>
-						<div class="layer"></div>
-						<div class="layer"></div>
-						<img class="grid__img layer"
-						src="IsometricGrids/img/Dribbble/6.png" alt="06" /></a></li>
-				<li class="grid__item"><a class="grid__link" href="#"><div
-							class="layer"></div>
-						<div class="layer"></div>
-						<div class="layer"></div>
-						<img class="grid__img layer"
-						src="IsometricGrids/img/Dribbble/7.png" alt="07" /></a></li>
-				<li class="grid__item"><a class="grid__link" href="#"><div
-							class="layer"></div>
-						<div class="layer"></div>
-						<div class="layer"></div>
-						<img class="grid__img layer"
-						src="IsometricGrids/img/Dribbble/8.png" alt="08" /></a></li>
-				<li class="grid__item"><a class="grid__link" href="#"><div
-							class="layer"></div>
-						<div class="layer"></div>
-						<div class="layer"></div>
-						<img class="grid__img layer"
-						src="IsometricGrids/img/Dribbble/9.png" alt="09" /></a></li>
-				<li class="grid__item"><a class="grid__link" href="#"><div
-							class="layer"></div>
-						<div class="layer"></div>
-						<div class="layer"></div>
-						<img class="grid__img layer"
-						src="IsometricGrids/img/Dribbble/10.png" alt="10" /></a></li>
-				<li class="grid__item"><a class="grid__link" href="#"><div
-							class="layer"></div>
-						<div class="layer"></div>
-						<div class="layer"></div>
-						<img class="grid__img layer"
-						src="IsometricGrids/img/Dribbble/1.png" alt="01" /></a></li>
-				<li class="grid__item"><a class="grid__link" href="#"><div
-							class="layer"></div>
-						<div class="layer"></div>
-						<div class="layer"></div>
-						<img class="grid__img layer"
-						src="IsometricGrids/img/Dribbble/2.png" alt="02" /></a></li>
-				<li class="grid__item"><a class="grid__link" href="#"><div
-							class="layer"></div>
-						<div class="layer"></div>
-						<div class="layer"></div>
-						<img class="grid__img layer"
-						src="IsometricGrids/img/Dribbble/3.png" alt="03" /></a></li>
-				<li class="grid__item"><a class="grid__link" href="#"><div
-							class="layer"></div>
-						<div class="layer"></div>
-						<div class="layer"></div>
-						<img class="grid__img layer"
-						src="IsometricGrids/img/Dribbble/4.png" alt="04" /></a></li>
-				<li class="grid__item"><a class="grid__link" href="#"><div
-							class="layer"></div>
-						<div class="layer"></div>
-						<div class="layer"></div>
-						<img class="grid__img layer"
-						src="IsometricGrids/img/Dribbble/5.png" alt="05" /></a></li>
-				<li class="grid__item"><a class="grid__link" href="#"><div
-							class="layer"></div>
-						<div class="layer"></div>
-						<div class="layer"></div>
-						<img class="grid__img layer"
-						src="IsometricGrids/img/Dribbble/6.png" alt="06" /></a></li>
-				<li class="grid__item"><a class="grid__link" href="#"><div
-							class="layer"></div>
-						<div class="layer"></div>
-						<div class="layer"></div>
-						<img class="grid__img layer"
-						src="IsometricGrids/img/Dribbble/7.png" alt="07" /></a></li>
-				<li class="grid__item"><a class="grid__link" href="#"><div
-							class="layer"></div>
-						<div class="layer"></div>
-						<div class="layer"></div>
-						<img class="grid__img layer"
-						src="IsometricGrids/img/Dribbble/8.png" alt="08" /></a></li>
-			</ul>
-		</div>
-	</section>
-	</main>
+	<h2 class="section__heading">
+		The meaning <em>OF</em> itself
+	</h2>
+	<p class="section__subtitle">你就是你，世界上唯一的一个，不要因为羡慕或者别的情绪，而让自己成为他人的复制品，这没有意义，生命之所以珍贵，正是因为它的不可复制。</p>
+	<div class="isolayer isolayer--deco4">
+		<ul class="grid">
+			<li class="grid__item"><a class="grid__link" href="#"><img
+					class="grid__img layer" src="IsometricGrids/img/Dribbble/1.png"
+					alt="01" /> </a></li>
+			<li class="grid__item"><a class="grid__link" href="#"><div
+						class="layer"></div>
+					<div class="layer"></div>
+					<div class="layer"></div> <img class="grid__img layer"
+					src="IsometricGrids/img/Dribbble/2.png" alt="02" /></a></li>
+			<li class="grid__item"><a class="grid__link" href="#"><div
+						class="layer"></div>
+					<div class="layer"></div>
+					<div class="layer"></div> <img class="grid__img layer"
+					src="IsometricGrids/img/Dribbble/3.png" alt="03" /></a></li>
+			<li class="grid__item"><a class="grid__link" href="#"><div
+						class="layer"></div>
+					<div class="layer"></div>
+					<div class="layer"></div> <img class="grid__img layer"
+					src="IsometricGrids/img/Dribbble/4.png" alt="04" /></a></li>
+			<li class="grid__item"><a class="grid__link" href="#"><div
+						class="layer"></div>
+					<div class="layer"></div>
+					<div class="layer"></div> <img class="grid__img layer"
+					src="IsometricGrids/img/Dribbble/5.png" alt="05" /></a></li>
+			<li class="grid__item"><a class="grid__link" href="#"><div
+						class="layer"></div>
+					<div class="layer"></div>
+					<div class="layer"></div> <img class="grid__img layer"
+					src="IsometricGrids/img/Dribbble/6.png" alt="06" /></a></li>
+			<li class="grid__item"><a class="grid__link" href="#"><div
+						class="layer"></div>
+					<div class="layer"></div>
+					<div class="layer"></div> <img class="grid__img layer"
+					src="IsometricGrids/img/Dribbble/7.png" alt="07" /></a></li>
+			<li class="grid__item"><a class="grid__link" href="#"><div
+						class="layer"></div>
+					<div class="layer"></div>
+					<div class="layer"></div> <img class="grid__img layer"
+					src="IsometricGrids/img/Dribbble/8.png" alt="08" /></a></li>
+			<li class="grid__item"><a class="grid__link" href="#"><div
+						class="layer"></div>
+					<div class="layer"></div>
+					<div class="layer"></div> <img class="grid__img layer"
+					src="IsometricGrids/img/Dribbble/9.png" alt="09" /></a></li>
+			<li class="grid__item"><a class="grid__link" href="#"><div
+						class="layer"></div>
+					<div class="layer"></div>
+					<div class="layer"></div> <img class="grid__img layer"
+					src="IsometricGrids/img/Dribbble/10.png" alt="10" /></a></li>
+			<li class="grid__item"><a class="grid__link" href="#"><div
+						class="layer"></div>
+					<div class="layer"></div>
+					<div class="layer"></div> <img class="grid__img layer"
+					src="IsometricGrids/img/Dribbble/1.png" alt="01" /></a></li>
+			<li class="grid__item"><a class="grid__link" href="#"><div
+						class="layer"></div>
+					<div class="layer"></div>
+					<div class="layer"></div> <img class="grid__img layer"
+					src="IsometricGrids/img/Dribbble/2.png" alt="02" /></a></li>
+			<li class="grid__item"><a class="grid__link" href="#"><div
+						class="layer"></div>
+					<div class="layer"></div>
+					<div class="layer"></div> <img class="grid__img layer"
+					src="IsometricGrids/img/Dribbble/3.png" alt="03" /></a></li>
+			<li class="grid__item"><a class="grid__link" href="#"><div
+						class="layer"></div>
+					<div class="layer"></div>
+					<div class="layer"></div> <img class="grid__img layer"
+					src="IsometricGrids/img/Dribbble/4.png" alt="04" /></a></li>
+			<li class="grid__item"><a class="grid__link" href="#"><div
+						class="layer"></div>
+					<div class="layer"></div>
+					<div class="layer"></div> <img class="grid__img layer"
+					src="IsometricGrids/img/Dribbble/5.png" alt="05" /></a></li>
+			<li class="grid__item"><a class="grid__link" href="#"><div
+						class="layer"></div>
+					<div class="layer"></div>
+					<div class="layer"></div> <img class="grid__img layer"
+					src="IsometricGrids/img/Dribbble/6.png" alt="06" /></a></li>
+			<li class="grid__item"><a class="grid__link" href="#"><div
+						class="layer"></div>
+					<div class="layer"></div>
+					<div class="layer"></div> <img class="grid__img layer"
+					src="IsometricGrids/img/Dribbble/7.png" alt="07" /></a></li>
+			<li class="grid__item"><a class="grid__link" href="#"><div
+						class="layer"></div>
+					<div class="layer"></div>
+					<div class="layer"></div> <img class="grid__img layer"
+					src="IsometricGrids/img/Dribbble/8.png" alt="08" /></a></li>
+		</ul>
+	</div>
+	</section> </main>
 	<script src="IsometricGrids/js/imagesloaded.pkgd.min.js"></script>
 	<script src="IsometricGrids/js/masonry.pkgd.min.js"></script>
 	<script src="IsometricGrids/js/dynamics.min.js"></script>
