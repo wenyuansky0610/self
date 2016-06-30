@@ -76,6 +76,10 @@ public class FileUploadAction extends ActionSupport
     {
         String root ="C:/file/";
         
+        File file3=new File("C:\\file\\"+file.getName());  
+        if(!file3.exists())  
+        {  
+        	
         InputStream is = new FileInputStream(file);
         
         File file2 = new File(root, fileFileName);
@@ -100,7 +104,7 @@ public class FileUploadAction extends ActionSupport
         
         os.close();
         is.close();
-        
+        }  
         return SUCCESS;
     }
 }
