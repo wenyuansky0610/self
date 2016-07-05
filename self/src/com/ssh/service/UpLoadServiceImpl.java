@@ -1,5 +1,7 @@
 package com.ssh.service;
 
+import java.util.List;
+
 import com.ssh.dao.BaseDAO;
 import com.ssh.model.UpLoadModel;
 import com.ssh.model.UserModel;
@@ -16,6 +18,19 @@ public class UpLoadServiceImpl implements UpLoadService {
 	}
     public BaseDAO<UpLoadModel> getBaseDAO() {
 		return baseDAO;
+	}
+	@Override
+	public List<UpLoadModel> getUpLoadModels(int rownum) {
+		return baseDAO.findTopRownum("from UpLoadModel order by upLoadTime desc",rownum);
+	}
+	@Override
+	public UpLoadModel getUpLoadModelbyID(String id) {
+		List<UpLoadModel> find = baseDAO.find("from UpLoadModel where id='"+id+"'");
+		if(find.isEmpty()){
+			
+			return null;
+		}
+		return find.get(0);
 	}
 
 }

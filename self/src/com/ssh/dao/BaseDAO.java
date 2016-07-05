@@ -47,7 +47,13 @@ public interface BaseDAO<T> {
      * @return 
      */  
     public List<T> find(String hql);  
-  
+    /** 
+     * 查询 
+     *  
+     * @param hql 
+     * @return 
+     */  
+    public List<T> findTopRownum(String hql,int rownum);  
     /** 
      * 查询集合 
      *  

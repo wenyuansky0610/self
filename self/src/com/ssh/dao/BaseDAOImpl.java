@@ -1,6 +1,7 @@
 package com.ssh.dao;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -178,6 +179,17 @@ public class BaseDAOImpl<T> implements BaseDAO<T> {
 		@Override
 		public List<String> findIp(String hql) {
 			  return this.getCurrentSession().createQuery(hql).list();  
+		}
+		@SuppressWarnings("unchecked")
+		@Override
+		public List<T> findTopRownum(String hql,int rownum) {
+			// TODO Auto-generated method stub
+			Query setFirstResult = this.getCurrentSession().createQuery(hql).setFirstResult(0);
+			if(setFirstResult.list().isEmpty()){
+				
+				return new ArrayList<T>();
+			}
+			return setFirstResult.setMaxResults(rownum).list();
 		}
 	  
 	}

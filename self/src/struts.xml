@@ -4,6 +4,7 @@
   
       <include file="com/ssh/action/LoginAction.xml" />
       <include file="com/ssh/action/FileUploadAction.xml" />
+      <include file="com/ssh/action/FileDownloadAction.xml" />
       <!-- 定义在action的name元素中使用“/” -->
 	  <constant name="struts.enable.SlashesInActionNames" value="true"/>
      
@@ -17,7 +18,8 @@
 	  <!-- 当struts.xml配置文件修改后，系统是否重新加载该文件，开发阶段打开此功能 -->
 	  <constant name="struts.configuration.xml.reload" value="true" />
 	  
-	  <constant name="struts.multipart.saveDir" value="D:/home/filetemp/" />
+	  <constant name="struts.multipart.saveDir" value="c:/home/filetemp/" />
 	  
-	  <constant name="struts.multipart.maxSize" value="10485760" />
+	  
+	  <constant name="struts.multipart.maxSize" value="1048576000" />
   </struts>

@@ -5,13 +5,20 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.ssh.model.UpLoadModel;
 import com.ssh.service.UpLoadService;
+import com.ssh.util.Base64;
+import com.ssh.util.Util;
 
 public class FileUploadAction extends ActionSupport
 {
@@ -27,6 +34,9 @@ public class FileUploadAction extends ActionSupport
     private String fileContentType;
 
     private UpLoadService upLoadService;
+    
+    private int rownum=5;
+    
     public String getUsername()
     {
         return username;
@@ -75,24 +85,33 @@ public class FileUploadAction extends ActionSupport
     public String execute() throws Exception
     {
         String root ="C:/file/";
-        
+    	HttpServletRequest request = ServletActionContext.getRequest();
         File file3=new File("C:\\file\\"+file.getName());  
-        if(!file3.exists())  
-        {  
+        if(file3.exists())  {
         	
+        	file3.delete();
+        	
+        }
         InputStream is = new FileInputStream(file);
         
         File file2 = new File(root, fileFileName);
 		OutputStream os = new FileOutputStream(file2);
         
-        System.out.println("fileFileName: " + fileFileName);
         // 因为file是存放在临时文件夹的文件，我们可以将其文件名和文件路径打印出来，看和之前的fileFileName是否相同
-        System.out.println("file: " + file.getName());
-        System.out.println("file: " + file.getPath());
         UpLoadModel loadModel = new UpLoadModel();
+        if(null==username||username.isEmpty()){
+        	
+        	username=fileFileName;
+        }
         loadModel.setFileName(username);
-        loadModel.setPath(file2.getPath());
-        loadModel.setUpLoadTime(new Date());
+		loadModel.setFileType(fileFileName);
+        String filePath = file2.getPath();
+		String encryptFilePath = Base64.encode(filePath);
+		String encodeFileFileName = Base64.encode(fileFileName);
+		loadModel.setPath(filePath);
+        loadModel.setUpLoadTime(Util.getFormatDate());
+        String basePath = Util.getBasePath(request);
+		loadModel.setUrl(basePath+"download.action?path="+encryptFilePath+"&fileName="+encodeFileFileName);
 		upLoadService.saveUpLoad(loadModel);
         byte[] buffer = new byte[500];
         int length = 0;
@@ -104,7 +123,18 @@ public class FileUploadAction extends ActionSupport
         
         os.close();
         is.close();
-        }  
-        return SUCCESS;
+        
+        queryFiles();
+		return SUCCESS;
     }
+
+
+
+	public String queryFiles() throws ParseException{
+		
+		HttpServletRequest request = ServletActionContext.getRequest();
+		List<UpLoadModel> upLoadModels = upLoadService.getUpLoadModels(rownum);
+		request.setAttribute("upLoadModels",upLoadModels);
+		return SUCCESS;
+	}
 }

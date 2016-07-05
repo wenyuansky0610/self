@@ -29,6 +29,6 @@
     <url-pattern>/*</url-pattern>
   </filter-mapping>
   <welcome-file-list>
-    <welcome-file>seif.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
 </web-app>

@@ -2,6 +2,12 @@ package com.ssh.util;
  
 import java.security.MessageDigest;   
   
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.servlet.http.HttpServletRequest;
+
 import sun.misc.BASE64Encoder;  
   
 /** 
@@ -42,4 +48,42 @@ public class Util {
             return true;  
         }  
     }  
+    /**
+     * 格式化当前时间
+     * @return
+     * @throws ParseException
+     */
+    public static Date getFormatDate() throws ParseException {
+		SimpleDateFormat time=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String format = time.format(new Date());
+        SimpleDateFormat time1=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date parse = time1.parse(format);
+		return parse;
+	}
+	/**
+	 * 格式化时间 
+	 * @param date 
+	 * @return
+	 * @throws ParseException
+	 */
+    public static Date getFormatDate(Date date) throws ParseException{
+    	
+    	SimpleDateFormat time=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String format = time.format(date);
+        SimpleDateFormat time1=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date parse = time1.parse(format);
+		return parse;
+    }
+    /**
+     * 获取全路径
+     * @param request
+     * @return
+     */
+    public static String getBasePath(HttpServletRequest request) {
+		String path = request.getContextPath();
+    	String basePath = request.getScheme() + "://"
+    			+ request.getServerName() + ":" + request.getServerPort()
+    			+ path + "/";
+		return basePath;
+	}
 }

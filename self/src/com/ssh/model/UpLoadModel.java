@@ -7,7 +7,8 @@ public class UpLoadModel {
 	private String fileName;
 	private String path;
 	private Date upLoadTime;
-
+	private String fileType;
+	private String url;
 	public UpLoadModel() {
 		super();
 	}
@@ -42,6 +43,22 @@ public class UpLoadModel {
 
 	public void setUpLoadTime(Date upLoadTime) {
 		this.upLoadTime = upLoadTime;
+	}
+
+	public String getFileType() {
+		return fileType;
+	}
+
+	public void setFileType(String fileType) {
+		this.fileType = fileType;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 
