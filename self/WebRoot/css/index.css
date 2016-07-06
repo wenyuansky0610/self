@@ -1,4 +1,5 @@
 @CHARSET "UTF-8";
+
 html {
 	overflow: hidden;
 }
@@ -14,7 +15,16 @@ body {
 	font-family: arial;
 	font-size: 0.8em;
 }
-#box2{width:200px;height:50px;position:absolute;right:0;bottom:0}
+
+#box2 {
+	width: 200px;
+	height: 50px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin-bottom: 10px;
+}
+
 table {
 	height: 30%;
 	width: 44%; /*  必须设置一个宽度， margin: 0 auto才能使之居于父组件中央*/
@@ -35,7 +45,7 @@ table {
 	-webkit-background-size: cover;
 }
 
-#screen img,canvas {
+#screen img, canvas {
 	position: absolute;
 	left: -9999px;
 	cursor: pointer;
@@ -71,8 +81,8 @@ table {
 #bar .button {
 	position: absolute;
 	background: #222;
-	width: 40px;
-	height: 40px;
+	width: 20px;
+	height: 20px;
 	cursor: pointer;
 }
 
@@ -90,9 +100,27 @@ table {
 
 #urlInfo {
 	position: absolute;
-	background: url(images/r.gif) no-repeat 0 4px;
+	background: url(../images/r.gif) no-repeat 0 4px;
 	visibility: hidden;
 	z-index: 30000;
 	padding-left: 12px;
 	cursor: pointer;
+}
+
+.main-container {
+	width: 100%;
+	height: 35px;
+	margin: 2 auto;
+	background: #000020;
+}
+
+.btn {
+	background: red;
+	height: 20px;
+	width: 100px;
+	position: relative;
+	border: 0px;
+	border-radius: 5px;
+	color: bule;
+	-webkit-transform: rotate(0deg);
 }
