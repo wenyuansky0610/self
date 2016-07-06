@@ -106,12 +106,12 @@ public class FileUploadAction extends ActionSupport
         loadModel.setFileName(username);
 		loadModel.setFileType(fileFileName);
         String filePath = file2.getPath();
-		String encryptFilePath = Base64.encode(filePath);
-		String encodeFileFileName = Base64.encode(fileFileName);
 		loadModel.setPath(filePath);
         loadModel.setUpLoadTime(Util.getFormatDate());
         String basePath = Util.getBasePath(request);
-		loadModel.setUrl(basePath+"download.action?path="+encryptFilePath+"&fileName="+encodeFileFileName);
+		String postID =Base64.encode(Util.getPostID());
+		loadModel.setPostId(postID);
+		loadModel.setUrl(basePath+"download.action?postid="+postID);
 		upLoadService.saveUpLoad(loadModel);
         byte[] buffer = new byte[500];
         int length = 0;

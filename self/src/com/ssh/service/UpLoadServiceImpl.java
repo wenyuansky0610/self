@@ -25,7 +25,7 @@ public class UpLoadServiceImpl implements UpLoadService {
 	}
 	@Override
 	public UpLoadModel getUpLoadModelbyID(String id) {
-		List<UpLoadModel> find = baseDAO.find("from UpLoadModel where id='"+id+"'");
+		List<UpLoadModel> find = baseDAO.find("from UpLoadModel where postId='"+id+"'");
 		if(find.isEmpty()){
 			
 			return null;

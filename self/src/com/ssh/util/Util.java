@@ -86,4 +86,14 @@ public class Util {
     			+ path + "/";
 		return basePath;
 	}
+    /**
+     * 
+     * @return
+     */
+    public static String getPostID(){
+    	
+    	Date date = new Date();
+    	long time = date.getTime();
+    	return time+"";
+    }
 }

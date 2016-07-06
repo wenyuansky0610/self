@@ -9,6 +9,7 @@ public class UpLoadModel {
 	private Date upLoadTime;
 	private String fileType;
 	private String url;
+	private String postId;
 	public UpLoadModel() {
 		super();
 	}
@@ -59,6 +60,14 @@ public class UpLoadModel {
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	public String getPostId() {
+		return postId;
+	}
+
+	public void setPostId(String postId) {
+		this.postId = postId;
 	}
 
 

@@ -15,5 +15,6 @@
         <property name="upLoadService" ref="upLoadService"/>
    </bean>
    <bean name="FileDownloadAction" class="com.ssh.action.FileDownloadAction">
+           <property name="upLoadService" ref="upLoadService"/>
    </bean>
 </beans>
